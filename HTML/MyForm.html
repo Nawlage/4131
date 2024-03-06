@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="form">Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Oswald&display=swap" rel="stylesheet">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="/CSS/style.css" rel="stylesheet">
+</head>
+<body>
+     <!-- bootstrap navbar-->
+    <nav class="nav nav-pills flex-column flex-sm-row mb-2" >
+        <a class="flex-sm-fill text-sm-center nav-link" aria-current="page" href="MySchedule.html">My Schedule</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="AboutMe.html">About Me</a>
+        <a class="flex-sm-fill text-sm-center nav-link active" href="MyForm.html">Form Input</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="stockQuotes.html">Stock Quotes</a>
+    </nav>
+
+    <div class="formcon">
+        <div>
+            <form action="EventLog.html" method="post">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><label for="event">Event</label></td>
+                            <td><input type="text" id="event" name="event" pattern="^[A-Za-z0-9 ]*$" title="Event must be alphanumeric" required></td>
+                        </tr>
+                            
+                        <tr>
+                            <td><label for="day">Day</label></td>
+                            <td>
+                                <select id="day" name="day" required>
+                                    <option value="">Select a day</option>
+                                    <option value="monday">Monday</option>
+                                    <option value="tuesday">Tuesday</option>
+                                    <option value="wednesday">Wednesday</option>
+                                    <option value="thursday">Thursday</option>
+                                    <option value="friday">Friday</option>
+                                    <option value="saturday">Saturday</option>
+                                    <option value="sunday">Sunday</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="start">Start</label></td>
+                            <td><input type="time" id="start" name="start" required></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="end">End</label></td>
+                            <td><input type="time" id="end" name="end" required></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="phone">Phone</label></td>
+                            <td><input type="text" id="phone" name="phone" title="Enter a valid number(10 digits)" minlength="10" maxlength="10" required></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="location">Location</label></td>
+                            <td><input type="text" id="location" name="location" required></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="info">Extra info</label></td>
+                            <td><input type="text" id="info" name="info" required></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="url">URL</label></td>
+                            <td><input type="url" id="url" name="url" required></td>
+                        </tr>
+
+                        <tr>
+                            <td><button type="button" class="btn btn-outline-secondary" id="clear">Clear</button></td>
+                            <td> <button type="submit" class="btn btn-outline-success" id="submit">Submit</button></td>
+                        </tr>
+
+                    </tbody>      
+                </table>
+            </form>
+        </div>
+        <div id="form-map"></div>
+    </div>
+    <script src="/js/script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzT6-ldxhAWi5ZIKm20YtkVGobVCfbvmE&libraries=places&callback=initMap" async defer></script>
+</body>
+</html>

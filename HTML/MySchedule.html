@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="schedule">Weekly schedule</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Oswald&display=swap" rel="stylesheet">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="/CSS/style.css" rel="stylesheet">
+</head> 
+<body>
+    <!-- bootstrap navbar-->
+    <nav class="nav nav-pills flex-column flex-sm-row mb-2" >
+        <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="MySchedule.html">My Schedule</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="AboutMe.html">About Me</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="MyForm.html">Form Input</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="stockQuotes.html">Stock Quotes</a>
+    </nav>
+
+    <h1>My Weekly Schedule</h1>
+
+    <div class="schedule-div">
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th class="heading1">Day</th>
+                    <th class="heading2">Event</th>
+                    <th class="heading1">Time</th>
+                    <th class="heading2">Location</th>
+                    <th class="heading1">Phone Number</th>
+                    <th class="heading2">URL</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                <tr>
+                    <td>Monday</td>
+                    <td class="eventName">MATH 1272 Lecture</td>
+                    <td class="time">9:05am - 9:55am</td>
+                    <td id="Smith">207 Pleasant St SE, Minneapolis, MN 55455</td>
+                    <td>N/A</td>
+                    <td><a href="https://umtc.catalog.prod.coursedog.com/courses/0001211">MATH 1272 info</a></td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td class="eventName">CSCI 4131 Lecture</td>
+                    <td class="time">4:00pm - 6:30pm</td>
+                    <td id="Zoom">virtual(Zoom)</td>
+                    <td>N/A</td>
+                    <td><a href="https://umtc.catalog.prod.coursedog.com/courses/7906541">CSCI 4131 info</a></td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td class="eventName">STAT 3021 Lecture</td>
+                    <td class="time">12:20pm - 1:10pm</td>
+                    <td id="Mayo">420 Delaware St SE, Minneapolis, MN 55455</td>
+                    <td>N/A</td>
+                    <td><a href="https://umtc.catalog.prod.coursedog.com/courses/0016221">STAT 3021 info</a></td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td class="eventName">CSCI 4041 Lecture</td>
+                    <td class="time">1:00pm - 2:15pm</td>
+                    <td id="Keller">200 Union St SE, Minneapolis, MN 55455</td>
+                    <td>N/A</td>
+                    <td><a href="https://umtc.catalog.prod.coursedog.com/courses/0036751">CSCI 4041 info</a></td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td class="eventName">CSCI 2033 Lecture</td>
+                    <td class="time">1:25pm - 2:15pm</td>
+                    <td id="Church">10 Church St SE, Minneapolis, MN 55455</td>
+                    <td>N/A</td>
+                    <td><a href="https://umtc.catalog.prod.coursedog.com/courses/8051471">CSCI 2033 info</a></td>
+                </tr>
+                
+                <tr>
+                    <td>Saturday</td>
+                    <td class="eventName">Work</td>
+                    <td class="time">7:00am - 12:00pm</td>
+                    <td id="Free">12401 Wayzata Blvd, Minnetonka, MN 55305</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+    
+                <tr>
+                    <td>Sunday</td>
+                    <td class="eventName">Work</td>
+                    <td>7:00am - 12:00pm</td>
+                    <td id="Sun">12401 Wayzata Blvd, Minnetonka, MN 55305</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                </tr>
+            </tbody>
+        </table>
+        <img  class="picture" id="picture" src="/images/gophers-mascot.png" alt="gopher mascot" width="500" height="400">
+    </div>
+    <div style="display: flex;">
+        <div id="schedule-map"></div>
+        <div>
+            <label>Directions to</label>
+            <input id="search" placeholder="Coffman Union" type="text">
+            <br/>
+            <label >By</label>
+            <br/>
+            <label for="walk">Walk</label>
+            <input type="radio" id="walk" >
+            <br/>
+            <label for="drive">Drive</label>
+            <input type="radio" id="drive">
+            <br/>
+            <label for="trans">Trans</label>
+            <input type="radio" id="trans" >
+            
+            <br/>
+            <button>Go</button>
+        </div>
+    </div>
+    
+    
+    <script src="/js/script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzT6-ldxhAWi5ZIKm20YtkVGobVCfbvmE&libraries=places&callback=initMap" async defer></script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="stock">stock Quotes</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Oswald&display=swap" rel="stylesheet">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="/CSS/style.css" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="nav nav-pills flex-column flex-sm-row mb-2" >
+        <a class="flex-sm-fill text-sm-center nav-link" aria-current="page" href="MySchedule.html">My Schedule</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="AboutMe.html">About Me</a>
+        <a class="flex-sm-fill text-sm-center nav-link" href="MyForm.html">Form Input</a>
+        <a class="flex-sm-fill text-sm-center nav-link active" href="stockQuotes.html">Stock Quotes</a>
+    </nav>
+    <div style="display: flex; justify-content: center;"">
+        <label>Enter Stock Symbol</label>
+        <input type="text" id="symbol" placeholder="e.g. MSFT AAPL">
+        <button id="submit" onclick="getData()">Get Stock Data</button>  
+    </div>
+    <div  id="responseCont" style="display: flex; justify-content: center; align-items: center;"></div>
+    <script src="/js/stocks.js"></script>
+    <script>
+        
+        let stocks = new Stocks('4NSG2D9O7E1WRRDX');
+        let submit = document.getElementById('submit');
+        let textArea = document.createElement('textarea');
+        let responseCont = document.getElementById('responseCont');
+        async function getData() {
+            let input = document.getElementById('symbol').value;
+            
+            let response = await stocks.timeSeries({
+                symbol: input,
+                interval: '1min',
+                amount: 1
+            });
+            textArea.innerHTML = JSON.stringify(response);
+            responseCont.appendChild(textArea);
+        }
+    </script>
+</body>
+</html>
